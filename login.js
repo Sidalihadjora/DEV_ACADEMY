@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const storedPassword = localStorage.getItem("password");
 
         if (emailInput === storedEmail && passwordInput === storedPassword) {
-            window.location.href = "main.html"; // Redirect to main page
+            window.location.href = "index.html"; // Redirect to main page
         } else {
             alert("Invalid email or password. Please try again.");
         }
