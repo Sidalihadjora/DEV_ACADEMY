@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Save user credentials to localStorage
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
-        window.location.href = "main.html";
+        window.location.href = "index.html";
     });
 });
