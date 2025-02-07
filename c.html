@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="c.css">
+    <script src="c.js" defer></script>
+    <title>DEV ACADEMY - C Language Course</title>
+</head>
+<body>
+    <h1>C Language Course</h1>
+    <img src="logo.png" id="logo">
+    <aside>
+        <ul>
+            <li id="li_introduction"><a href="#introduction">Introduction</a></li>
+            <li id="li_basic-concepts"><a href="#basic-concepts">Basic Concepts</a></li>
+            <li id="li_data-types"><a href="#data-types">Data Types</a></li>
+            <li id="li_operators"><a href="#operators">Operators</a></li>
+            <li id="li_selection"><a href="#selection">Selection (Decision Making)</a></li>
+            <li id="li_iteration"><a href="#iteration">Iteration (Loops)</a></li>
+            <li id="li_storage-classes"><a href="#storage-classes">Storage Classes</a></li>
+            <li id="li_functions"><a href="#functions">Functions</a></li>
+            <li id="li_arrays"><a href="#arrays">Arrays</a></li>
+            <li id="li_pointers"><a href="#pointers">Pointers</a></li>
+            <li id="li_strings"><a href="#strings">Strings</a></li>
+            <li id="li_structures"><a href="#structures">Structures</a></li>
+            <li id="li_file-manipulation"><a href="#file-manipulation">File Manipulation</a></li>
+            <li id="li_error-handling"><a href="#error-handling">Error Handling</a></li>
+        </ul>
+    </aside>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>C is a powerful, general-purpose programming language that has been the foundation of modern computing for decades. Developed in the early 1970s by Dennis Ritchie at Bell Labs, C provides low-level memory access, high efficiency, and portability, making it ideal for system programming.</p>
+    
+        <p>One of C's most significant contributions is its role in developing operating systems, including UNIX and modern OS kernels like Linux. Its simplicity, speed, and flexibility have made it a preferred choice for embedded systems, game development, and high-performance applications.</p>
+    
+        <p>Despite being one of the oldest programming languages, C remains widely used today. It has influenced many other languages, including C++, Java, and Python. Mastering C is a fundamental step for any programmer looking to understand how computers work at a low level and build efficient software.</p>
+    </section>    
+
+    <section id="basic-concepts">
+        <h2>Basic Concepts</h2>
+        <p>Understanding the fundamentals of C is essential for writing efficient programs. This section introduces the core concepts of C programming, including syntax, data types, variables, operators, and the basic structure of a C program.</p>
+    
+        <p>We will explore how to declare variables, use data types such as integers and floating points, and write simple C programs. Additionally, we will cover the importance of functions, control flow statements, and input/output operations.</p>
+    
+        <p>By the end of this section, you will have a strong foundation in C programming and be ready to write your own basic programs.</p>
+        
+        <div class="input">
+            <pre>
+                int main() {
+                printf("Hello, World!\n");
+                return 0;
+                }
+            </pre>
+        </div>
+    </section>
+    
+
+    <section id="data-types">
+        <h2>Data Types</h2>
+        <p>In C, data types define the type of data that variables can store. Understanding data types is essential for efficient memory management and program execution.</p>
+    
+        <p>This section covers fundamental data types such as:</p>
+        <ul>
+            <li><strong>int</strong> – Stores integers (whole numbers).</li>
+            <li><strong>float</strong> – Stores floating-point numbers (decimal values).</li>
+            <li><strong>char</strong> – Stores single characters.</li>
+            <li><strong>double</strong> – Stores double-precision floating-point numbers.</li>
+        </ul>
+    
+        <p>We will also explore derived data types like arrays, pointers, structures, and user-defined types such as <code>typedef</code> and <code>enum</code>. Understanding these data types will help you write efficient and optimized C programs.</p>
+        <div class="input">
+            <pre>
+                int main() {
+                    int a = 10;
+                    float b = 5.5;
+                    char c = 'A';
+                    printf("Integer: %d\n", a);
+                    printf("Float: %.2f\n", b);
+                    printf("Character: %c\n", c);
+
+                    return 0;
+                }
+            </pre>
+        </div>
+    </section>
+    
+
+    <section id="operators">
+        <h2>Operators</h2>
+        <p>Operators in C allow you to perform various computations and manipulations on data. This section covers:</p>
+        <ul>
+            <li><strong>Arithmetic Operators</strong> – Perform basic mathematical operations like addition, subtraction, multiplication, and division.</li>
+            <li><strong>Logical Operators</strong> – Used for decision-making (AND, OR, NOT).</li>
+            <li><strong>Bitwise Operators</strong> – Manipulate individual bits in variables.</li>
+            <li><strong>Relational Operators</strong> – Compare values (greater than, less than, equal to, etc.).</li>
+            <li><strong>Assignment and Miscellaneous Operators</strong> – Modify variables and perform type casting.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+
+                    int main() {
+                        // Arithmetic Operators
+                        int a = 10, b = 3;
+                        printf("Addition: %d\n", a + b);
+                        printf("Subtraction: %d\n", a - b);
+                        printf("Multiplication: %d\n", a * b);
+                        printf("Division: %d\n", a / b);
+                        printf("Remainder: %d\n", a % b);
+                    
+                        // Relational Operators
+                        printf("Is a > b? %d\n", a > b);
+                        printf("Is a == b? %d\n", a == b);
+                        printf("Is a != b? %d\n", a != b);
+                    
+                        // Logical Operators
+                        int x = 1, y = 0;
+                        printf("Logical AND: %d\n", x && y);
+                        printf("Logical OR: %d\n", x || y);
+                        printf("Logical NOT: %d\n", !x);
+                    
+                        // Assignment Operators
+                        int c = 5;
+                        c += 3; // c = c + 3
+                        printf("Assignment (c += 3): %d\n", c);
+                    
+                        // Increment and Decrement Operators
+                        int d = 7;
+                        printf("Post-increment: %d\n", d++);
+                        printf("Pre-increment: %d\n", ++d);
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                Addition: 13
+Subtraction: 7
+Multiplication: 30
+Division: 3
+Remainder: 1
+Is a > b? 1
+Is a == b? 0
+Is a != b? 1
+Logical AND: 0
+Logical OR: 1
+Logical NOT: 0
+Assignment (c += 3): 8
+Post-increment: 7
+Pre-increment: 9
+            </pre>
+        </div>
+    </section>
+    
+    <section id="selection">
+        <h2>Selection (Decision Making)</h2>
+        <p>Decision-making constructs help programs execute specific blocks of code based on conditions. This section explores:</p>
+        <ul>
+            <li><strong>if-else statements</strong> – Execute different code blocks based on conditions.</li>
+            <li><strong>switch-case</strong> – An alternative to multiple if-else statements for handling multiple conditions.</li>
+            <li><strong>Conditional (Ternary) Operator</strong> – A shorthand way to write simple if-else statements.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+
+                    int main() {
+                        int num;
+                    
+                        // Input from user
+                        printf("Enter a number: ");
+                        scanf("%d", &num);
+                    
+                        // if statement
+                        if (num > 0) {
+                            printf("%d is positive.\n", num);
+                        }
+                    
+                        // if-else statement
+                        if (num % 2 == 0) {
+                            printf("%d is even.\n", num);
+                        } else {
+                            printf("%d is odd.\n", num);
+                        }
+                    
+                        // else-if ladder
+                        if (num > 0) {
+                            printf("%d is positive.\n", num);
+                        } else if (num < 0) {
+                            printf("%d is negative.\n", num);
+                        } else {
+                            printf("%d is zero.\n", num);
+                        }
+                    
+                        // switch-case statement
+                        switch (num) {
+                            case 1:
+                                printf("You entered one.\n");
+                                break;
+                            case 2:
+                                printf("You entered two.\n");
+                                break;
+                            case 3:
+                                printf("You entered three.\n");
+                                break;
+                            default:
+                                printf("You entered a number other than 1, 2, or 3.\n");
+                                break;
+                        }
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                Enter a number: 5
+5 is positive.
+5 is odd.
+5 is positive.
+You entered a number other than 1, 2, or 3.
+            </pre>
+        </div>
+    </section>
+    
+    <section id="iteration">
+        <h2>Iteration (Loops)</h2>
+        <p>Loops in C allow repeated execution of a block of code. This section covers:</p>
+        <ul>
+            <li><strong>for loop</strong> – Used when the number of iterations is known.</li>
+            <li><strong>while loop</strong> – Executes as long as a condition remains true.</li>
+            <li><strong>do-while loop</strong> – Similar to a while loop but guarantees at least one execution.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+
+                    int main() {
+                        int i;
+                    
+                        // for loop
+                        printf("For Loop:\n");
+                        for (i = 1; i <= 5; i++) {
+                            printf("%d ", i);
+                        }
+                        printf("\n\n");
+                    
+                        // while loop
+                        printf("While Loop:\n");
+                        i = 1;
+                        while (i <= 5) {
+                            printf("%d ", i);
+                            i++;
+                        }
+                        printf("\n\n");
+                    
+                        // do-while loop
+                        printf("Do-While Loop:\n");
+                        i = 1;
+                        do {
+                            printf("%d ", i);
+                            i++;
+                        } while (i <= 5);
+                        printf("\n\n");
+                    
+                        // Nested loops
+                        printf("Nested Loops (Pattern):\n");
+                        for (i = 1; i <= 5; i++) {
+                            for (int j = 1; j <= i; j++) {
+                                printf("* ");
+                            }
+                            printf("\n");
+                        }
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                For Loop:
+1 2 3 4 5 
+
+While Loop:
+1 2 3 4 5 
+
+Do-While Loop:
+1 2 3 4 5 
+
+Nested Loops (Pattern):
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+            </pre>
+        </div>
+    </section>
+    
+    <section id="storage-classes">
+        <h2>Storage Classes</h2>
+        <p>Storage classes define the scope, visibility, and lifetime of variables in C. This section discusses:</p>
+        <ul>
+            <li><strong>auto</strong> – Default storage class for local variables.</li>
+            <li><strong>static</strong> – Retains variable value even after function execution ends.</li>
+            <li><strong>extern</strong> – Declares variables globally across multiple files.</li>
+            <li><strong>register</strong> – Suggests storage in CPU registers for faster access.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+
+                    // Global variable with static storage class
+                    static int globalStaticVar = 10;
+                    
+                    // Function to demonstrate automatic storage class
+                    void autoStorageClass() {
+                        // Automatic (local) variable
+                        auto int autoVar = 20;
+                        printf("Auto Variable: %d\n", autoVar);
+                    }
+                    
+                    // Function to demonstrate register storage class
+                    void registerStorageClass() {
+                        // Register variable
+                        register int registerVar = 30;
+                        printf("Register Variable: %d\n", registerVar);
+                    }
+                    
+                    // Function to demonstrate static storage class
+                    void staticStorageClass() {
+                        // Static variable (retains its value between function calls)
+                        static int staticVar = 40;
+                        printf("Static Variable: %d\n", staticVar);
+                        staticVar++;
+                    }
+                    
+                    // Function to demonstrate extern storage class
+                    void externStorageClass() {
+                        // Extern variable (refers to the global variable)
+                        extern int globalStaticVar;
+                        printf("Extern Variable: %d\n", globalStaticVar);
+                    }
+                    
+                    int main() {
+                        printf("===== Storage Classes in C =====\n");
+                    
+                        // Automatic Storage Class
+                        printf("\nAuto Storage Class:\n");
+                        autoStorageClass();
+                    
+                        // Register Storage Class
+                        printf("\nRegister Storage Class:\n");
+                        registerStorageClass();
+                    
+                        // Static Storage Class
+                        printf("\nStatic Storage Class:\n");
+                        staticStorageClass();
+                        staticStorageClass(); // Value retained between calls
+                    
+                        // Extern Storage Class
+                        printf("\nExtern Storage Class:\n");
+                        externStorageClass();
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                ===== Storage Classes in C =====
+
+Auto Storage Class:
+Auto Variable: 20
+
+Register Storage Class:
+Register Variable: 30
+
+Static Storage Class:
+Static Variable: 40
+Static Variable: 41
+
+Extern Storage Class:
+Extern Variable: 10
+            </pre>
+        </div>
+    </section>
+    
+    <section id="functions">
+        <h2>Functions</h2>
+        <p>Functions allow modular and reusable code. This section covers:</p>
+        <ul>
+            <li><strong>User-defined functions</strong> – Create your own functions for better program structure.</li>
+            <li><strong>Recursion</strong> – Functions that call themselves for tasks like factorial calculation.</li>
+            <li><strong>Function pointers</strong> – Store memory addresses of functions to enable dynamic function calls.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+
+                    // Function declaration (prototype)
+                    int add(int a, int b);
+                    void printMessage();
+                    
+                    int main() {
+                        // Function call
+                        int result = add(5, 3);
+                        printf("Sum: %d\n", result);
+                    
+                        // Void function call
+                        printMessage();
+                    
+                        return 0;
+                    }
+                    
+                    // Function definition
+                    int add(int a, int b) {
+                        return a + b;
+                    }
+                    
+                    // Void function definition
+                    void printMessage() {
+                        printf("Hello from the function!\n");
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                Sum: 8
+Hello from the function!
+            </pre>
+        </div>
+    </section>
+    
+    <section id="arrays">
+        <h2>Arrays</h2>
+        <p>Arrays store multiple values of the same type under a single variable name. Learn about:</p>
+        <ul>
+            <li><strong>One-dimensional arrays</strong> – Store linear lists of values.</li>
+            <li><strong>Multi-dimensional arrays</strong> – Store tabular or matrix-like data.</li>
+            <li><strong>Array manipulation</strong> – Learn sorting, searching, and other operations.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+
+                    int main() {
+                        // Array declaration and initialization
+                        int numbers[5] = {10, 20, 30, 40, 50};
+                    
+                        // Accessing array elements
+                        printf("Array elements:\n");
+                        for (int i = 0; i < 5; i++) {
+                            printf("numbers[%d] = %d\n", i, numbers[i]);
+                        }
+                    
+                        // Modifying array elements
+                        numbers[2] = 100; // Change the third element
+                        printf("\nAfter modification:\n");
+                        printf("numbers[2] = %d\n", numbers[2]);
+                    
+                        // Sum of array elements
+                        int sum = 0;
+                        for (int i = 0; i < 5; i++) {
+                            sum += numbers[i];
+                        }
+                        printf("\nSum of array elements: %d\n", sum);
+                    
+                        // 2D array example
+                        int matrix[2][3] = {
+                            {1, 2, 3},
+                            {4, 5, 6}
+                        };
+                        printf("\n2D Array (Matrix):\n");
+                        for (int i = 0; i < 2; i++) {
+                            for (int j = 0; j < 3; j++) {
+                                printf("%d ", matrix[i][j]);
+                            }
+                            printf("\n");
+                        }
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                Array elements:
+numbers[0] = 10
+numbers[1] = 20
+numbers[2] = 30
+numbers[3] = 40
+numbers[4] = 50
+
+After modification:
+numbers[2] = 100
+
+Sum of array elements: 220
+
+2D Array (Matrix):
+1 2 3 
+4 5 6 
+            </pre>
+        </div>
+    </section>
+    
+    <section id="pointers">
+        <h2>Pointers</h2>
+        <p>Pointers are one of the most powerful features in C. This section covers:</p>
+        <ul>
+            <li><strong>Memory addresses</strong> – Understand how pointers store addresses of variables.</li>
+            <li><strong>Pointer arithmetic</strong> – Perform operations like incrementing/decrementing addresses.</li>
+            <li><strong>Dynamic memory allocation</strong> – Use malloc, calloc, and free for efficient memory management.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+
+                    int main() {
+                        int num = 42;
+                        int *ptr; // Pointer declaration
+                    
+                        ptr = &num; // Assign address of num to ptr
+                    
+                        printf("Value of num: %d\n", num);
+                        printf("Address of num: %p\n", &num);
+                        printf("Value of ptr (address stored in ptr): %p\n", ptr);
+                        printf("Value pointed to by ptr: %d\n", *ptr);
+                    
+                        // Modifying value using pointer
+                        *ptr = 100;
+                        printf("\nAfter modifying value using pointer:\n");
+                        printf("Value of num: %d\n", num);
+                        printf("Value pointed to by ptr: %d\n", *ptr);
+                    
+                        // Pointer to pointer
+                        int **pptr = &ptr;
+                        printf("\nPointer to Pointer:\n");
+                        printf("Address of ptr: %p\n", &ptr);
+                        printf("Value of pptr (address stored in pptr): %p\n", pptr);
+                        printf("Value pointed to by pptr: %p\n", *pptr);
+                        printf("Value pointed to by *pptr: %d\n", **pptr);
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                Value of num: 42
+Address of num: 0x7ffee4b5c9ac
+Value of ptr (address stored in ptr): 0x7ffee4b5c9ac
+Value pointed to by ptr: 42
+
+After modifying value using pointer:
+Value of num: 100
+Value pointed to by ptr: 100
+
+Pointer to Pointer:
+Address of ptr: 0x7ffee4b5c9a0
+Value of pptr (address stored in pptr): 0x7ffee4b5c9a0
+Value pointed to by pptr: 0x7ffee4b5c9ac
+Value pointed to by *pptr: 100
+            </pre>
+        </div>
+    </section>
+    
+    <section id="strings">
+        <h2>Strings</h2>
+        <p>Strings in C are represented as character arrays. This section covers:</p>
+        <ul>
+            <li><strong>Character arrays</strong> – Store sequences of characters.</li>
+            <li><strong>String manipulation</strong> – Learn common functions like strcpy, strcat, strlen, and strcmp.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+                    #include <string.h>
+                    
+                    int main() {
+                        // String initialization
+                        char str1[] = "Hello";
+                        char str2[10];
+                    
+                        // Copying a string
+                        strcpy(str2, str1);
+                        printf("str1: %s\n", str1);
+                        printf("str2 (copied from str1): %s\n", str2);
+                    
+                        // String length
+                        printf("Length of str1: %zu\n", strlen(str1));
+                    
+                        // Concatenating strings
+                        strcat(str2, " World!");
+                        printf("str2 after concatenation: %s\n", str2);
+                    
+                        // Comparing strings
+                        if (strcmp(str1, str2) == 0) {
+                            printf("str1 and str2 are equal.\n");
+                        } else {
+                            printf("str1 and str2 are not equal.\n");
+                        }
+                    
+                        // Accessing individual characters
+                        printf("First character of str1: %c\n", str1[0]);
+                        printf("Third character of str1: %c\n", str1[2]);
+                    
+                        // Modifying a character in a string
+                        str1[0] = 'h';
+                        printf("str1 after modification: %s\n", str1);
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                str1: Hello
+str2 (copied from str1): Hello
+Length of str1: 5
+str2 after concatenation: Hello World!
+str1 and str2 are not equal.
+First character of str1: H
+Third character of str1: l
+str1 after modification: hello
+            </pre>
+        </div>
+    </section>
+    
+    <section id="structures">
+        <h2>Structures</h2>
+        <p>Structures allow grouping of different data types into a single unit. This section explores:</p>
+        <ul>
+            <li><strong>Structures</strong> – Define custom data types using <code>struct</code>.</li>
+            <li><strong>Unions</strong> – Store different types of data in the same memory location.</li>
+            <li><strong>typedef</strong> – Create type aliases for better code readability.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+                    #include <string.h>
+                    
+                    // Define a structure
+                    struct Student {
+                        char name[50];
+                        int age;
+                        float gpa;
+                    };
+                    
+                    int main() {
+                        // Declare a structure variable
+                        struct Student student1;
+                    
+                        // Assign values to structure members
+                        strcpy(student1.name, "Alice");
+                        student1.age = 20;
+                        student1.gpa = 3.8;
+                    
+                        // Access and print structure members
+                        printf("Student 1:\n");
+                        printf("Name: %s\n", student1.name);
+                        printf("Age: %d\n", student1.age);
+                        printf("GPA: %.2f\n", student1.gpa);
+                    
+                        // Declare and initialize a structure variable
+                        struct Student student2 = {"Bob", 22, 3.5};
+                    
+                        // Access and print structure members
+                        printf("\nStudent 2:\n");
+                        printf("Name: %s\n", student2.name);
+                        printf("Age: %d\n", student2.age);
+                        printf("GPA: %.2f\n", student2.gpa);
+                    
+                        // Array of structures
+                        struct Student students[3] = {
+                            {"Charlie", 21, 3.9},
+                            {"David", 19, 3.7},
+                            {"Eve", 20, 3.6}
+                        };
+                    
+                        // Access and print array of structures
+                        printf("\nArray of Students:\n");
+                        for (int i = 0; i < 3; i++) {
+                            printf("Student %d:\n", i + 1);
+                            printf("Name: %s\n", students[i].name);
+                            printf("Age: %d\n", students[i].age);
+                            printf("GPA: %.2f\n", students[i].gpa);
+                        }
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                Student 1:
+Name: Alice
+Age: 20
+GPA: 3.80
+
+Student 2:
+Name: Bob
+Age: 22
+GPA: 3.50
+
+Array of Students:
+Student 1:
+Name: Charlie
+Age: 21
+GPA: 3.90
+Student 2:
+Name: David
+Age: 19
+GPA: 3.70
+Student 3:
+Name: Eve
+Age: 20
+GPA: 3.60
+            </pre>
+        </div>
+    </section>
+    
+    <section id="file-manipulation">
+        <h2>File Manipulation</h2>
+        <p>File handling enables reading and writing data to files. Learn about:</p>
+        <ul>
+            <li><strong>File operations</strong> – Open, close, read, and write files.</li>
+            <li><strong>File handling functions</strong> – Use fopen, fclose, fread, fwrite, fprintf, and fscanf.</li>
+            <li><strong>Binary vs Text Files</strong> – Understand different file storage formats.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+
+                    int main() {
+                        FILE *file;
+                        char data[100];
+                    
+                        // Writing to a file
+                        file = fopen("example.txt", "w");
+                        if (file == NULL) {
+                            printf("Error opening file!\n");
+                            return 1;
+                        }
+                        printf("Enter text to write to the file: ");
+                        fgets(data, sizeof(data), stdin);
+                        fprintf(file, "%s", data);
+                        fclose(file);
+                        printf("Data written to file successfully.\n\n");
+                    
+                        // Reading from a file
+                        file = fopen("example.txt", "r");
+                        if (file == NULL) {
+                            printf("Error opening file!\n");
+                            return 1;
+                        }
+                        printf("Reading from file:\n");
+                        while (fgets(data, sizeof(data), file) != NULL) {
+                            printf("%s", data);
+                        }
+                        fclose(file);
+                    
+                        // Appending to a file
+                        file = fopen("example.txt", "a");
+                        if (file == NULL) {
+                            printf("Error opening file!\n");
+                            return 1;
+                        }
+                        printf("\nEnter text to append to the file: ");
+                        fgets(data, sizeof(data), stdin);
+                        fprintf(file, "%s", data);
+                        fclose(file);
+                        printf("Data appended to file successfully.\n\n");
+                    
+                        // Reading the updated file
+                        file = fopen("example.txt", "r");
+                        if (file == NULL) {
+                            printf("Error opening file!\n");
+                            return 1;
+                        }
+                        printf("Updated file content:\n");
+                        while (fgets(data, sizeof(data), file) != NULL) {
+                            printf("%s", data);
+                        }
+                        fclose(file);
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                Enter text to write to the file: Hello, World!
+Data written to file successfully.
+
+Reading from file:
+Hello, World!
+
+Enter text to append to the file: This is a new line.
+Data appended to file successfully.
+
+Updated file content:
+Hello, World!
+This is a new line.
+            </pre>
+        </div>
+    </section>
+    
+    <section id="error-handling">
+        <h2>Error Handling</h2>
+        <p>Debugging and error handling are crucial for writing robust programs. This section covers:</p>
+        <ul>
+            <li><strong>Common runtime errors</strong> – Understand segmentation faults, memory leaks, and undefined behaviors.</li>
+            <li><strong>Debugging techniques</strong> – Learn to use gdb and debugging tools to trace errors.</li>
+            <li><strong>Error-handling functions</strong> – Use <code>errno</code> and <code>perror()</code> to handle errors.</li>
+        </ul>
+        <div class="input">
+            <pre>
+                #include <stdio.h>
+                    #include <errno.h>  // For errno
+                    #include <string.h> // For strerror
+                    
+                    int divide(int a, int b, int *result) {
+                        if (b == 0) {
+                            return -1; // Error: Division by zero
+                        }
+                        *result = a / b;
+                        return 0; // Success
+                    }
+                    
+                    int main() {
+                        // Example 1: Handling division by zero
+                        int result;
+                        if (divide(10, 0, &result) == -1) {
+                            printf("Error: Division by zero is not allowed.\n");
+                        } else {
+                            printf("Result of division: %d\n", result);
+                        }
+                    
+                        // Example 2: Handling file errors
+                        FILE *file = fopen("non_existent_file.txt", "r");
+                        if (file == NULL) {
+                            printf("Error opening file: %s\n", strerror(errno)); // Print error message
+                        } else {
+                            fclose(file);
+                        }
+                    
+                        // Example 3: Using perror for error handling
+                        file = fopen("another_non_existent_file.txt", "r");
+                        if (file == NULL) {
+                            perror("Error opening file"); // Print error message with custom prefix
+                        } else {
+                            fclose(file);
+                        }
+                    
+                        return 0;
+                    }
+            </pre>
+        </div>
+        <div class="output">
+            <pre>
+                Error: Division by zero is not allowed.
+                Error opening file: No such file or directory
+                Error opening file: No such file or directory
+            </pre>
+        </div>
+    </section>  
+</body>
+</html>

@@ -1,0 +1,157 @@
+:root {
+  --primary: #2A2A72;
+  --secondary: #009FFD;
+  --accent: #811eba;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gradient: white
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body{
+  overflow: hidden;
+}
+.auth-container {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--gradient);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.form-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 450px;
+  transform: translateY(-30px);
+  opacity: 0;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.auth-container h2 img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  top: 5vh;
+}
+.auth-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+}
+
+.auth-form input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(0, 159, 253, 0.3);
+  outline: none;
+  background: white;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(90deg, var(--accent), #d726d7);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.auth-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(129, 30, 186, 0.4);
+  background: linear-gradient(90deg, #d726d7, var(--accent));
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--dark);
+  font-size: 0.95rem;
+}
+
+.auth-link a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.auth-link a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* تأثيرات التحريك */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* تحسين التصميم للهواتف */
+@media (max-width: 768px) {
+  .form-container {
+      padding: 2rem;
+      transform: none;
+  }
+  
+  .auth-container h2 {
+      font-size: 1.8rem;
+  }
+}

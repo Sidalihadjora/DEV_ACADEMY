@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #34495e;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.6;
+}
+#logo{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    margin-left: 34%;
+}
+/* Aside Styles */
+aside {
+    width: 17%;
+    height: 90vh;
+    background-color: #302c50;
+    color: #ecf0f1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 2vh;
+    left: 1%;
+    border-radius: 2%;
+    overflow-y: auto;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 15px 0;
+}
+
+aside ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: block;
+}
+
+aside ul li a:hover {
+    color: #3498db;
+    transform: translateX(10px);
+}
+
+/* Main Content Styles */
+section {
+    margin-left: 22%; /* Adjusted to account for aside width */
+    width: 70%; /* 80% width for sections */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: none;
+}
+
+section div {
+    background-color: #b6b6b65b;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+section div pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+/* Input and Output Styles */
+.input, .output {
+    background-color: #ced5db;
+    color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Hover and Animation Effects */
+aside ul li a {
+    position: relative;
+}
+
+aside ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+aside ul li a:hover::after {
+    width: 100%;
+}
+
+/* Modern and Attractive Effects */
+section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+    }
+
+    section {
+        margin-left: 0;
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 20px;
+    }
+}
